@@ -1,0 +1,21 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 04-17 17:39:32.376 4859-4859/? E/libprocessgroup: failed to make and chown /acct/uid_10058: Read-only file system\
+04-17 17:39:32.377 4859-4859/? W/Zygote: createProcessGroup failed, kernel missing CONFIG_CGROUP_CPUACCT?\
+04-17 17:39:32.377 4859-4859/? I/art: Not late-enabling -Xcheck:jni (already on)\
+04-17 17:39:33.009 4859-4859/edu.washington.shivc.activityspy I/InstantRun: starting instant run server: is main process\
+04-17 17:39:33.813 4859-4859/edu.washington.shivc.activityspy W/art: Before Android 4.1, method android.graphics.PorterDuffColorFilter android.support.graphics.drawable.VectorDrawableCompat.updateTintFilter(android.graphics.PorterDuffColorFilter, android.content.res.ColorStateList, android.graphics.PorterDuff$Mode) would have incorrectly overridden the package-private method in android.graphics.drawable.Drawable\
+04-17 17:39:34.068 4859-4859/edu.washington.shivc.activityspy I/MainActivity: onCreate event fired\
+04-17 17:39:34.093 4859-4876/edu.washington.shivc.activityspy D/OpenGLRenderer: Use EGL_SWAP_BEHAVIOR_PRESERVED: true\
+04-17 17:39:34.097 4859-4859/edu.washington.shivc.activityspy D/Atlas: Validating map...\
+04-17 17:39:34.166 4859-4876/edu.washington.shivc.activityspy I/OpenGLRenderer: Initialized EGL, version 1.4\
+04-17 17:39:34.182 4859-4876/edu.washington.shivc.activityspy D/EGL_emulation: eglCreateContext: 0xb42b9820: maj 2 min 0 rcv 2\
+04-17 17:39:34.184 4859-4876/edu.washington.shivc.activityspy D/EGL_emulation: eglMakeCurrent: 0xb42b9820: ver 2 0\
+04-17 17:39:34.196 4859-4876/edu.washington.shivc.activityspy D/OpenGLRenderer: Enabling debug mode 0\
+04-17 17:39:34.217 4859-4876/edu.washington.shivc.activityspy D/EGL_emulation: eglMakeCurrent: 0xb42b9820: ver 2 0\
+04-17 17:39:34.287 4859-4859/edu.washington.shivc.activityspy W/art: Before Android 4.1, method int android.support.v7.widget.DropDownListView.lookForSelectablePosition(int, boolean) would have incorrectly overridden the package-private method in android.widget.ListView}
