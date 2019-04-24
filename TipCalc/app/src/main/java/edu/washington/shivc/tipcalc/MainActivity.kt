@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         amount.addTextChangedListener(object : TextWatcher {
             val textBox: TextView = amount
             var oldText = ""
-            fun after(p0: Editable?) {
+            override fun afterTextChanged(p0: Editable?) {
                 if (amount.length() >= 3) {
                     if (amount.text.contains('.')) {
                         if (amount.text.indexOf('.', 0, true) == amount.length() - 4) {
@@ -71,7 +71,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
-
-
 }
