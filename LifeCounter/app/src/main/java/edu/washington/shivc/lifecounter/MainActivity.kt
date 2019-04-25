@@ -39,24 +39,24 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         var counter = 0
         for (layout in layouts()) {
-            var buttons = layout.touchables
-            for (button in buttons) {
+            var btns = layout.touchables
+            for (button in btns) {
                 button.tag = counter
                 button.setOnClickListener {
                     it as Button
-                    var increment = 0
+                    var increase = 0
                     when (it.text.toString()) {
-                        "+" -> increment = 1
-                        "-" -> increment = -1
-                        "+5" -> increment = 5
-                        else -> increment = -5
+                        "+" -> increase = 1
+                        "-" -> increase = -1
+                        "+5" -> increase = 5
+                        else -> increase = -5
                     }
 
-                    var currText = points()[button.tag as Int].text.substring(13)
-                    val result = (currText.toInt() + increment).toString()
+                    var current = points()[button.tag as Int].text.substring(13)
+                    val result = (current.toInt() + increase).toString()
                     points()[button.tag as Int].text = points()[button.tag as Int].text.substring(0, 13) + result
 
-                    if (result.toInt() <= 0) { // <= 0
+                    if (result.toInt() < 1) { // <= 0
                         loser.text = points()[button.tag as Int].text.substring(0, 9) + " is the loser"
                     }
 
