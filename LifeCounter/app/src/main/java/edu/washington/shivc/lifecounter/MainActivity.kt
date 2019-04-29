@@ -17,19 +17,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         points = {
-            var oneHP: TextView = findViewById(R.id.oneHP)
-            var twoHP: TextView = findViewById(R.id.twoHP)
-            var threeHP: TextView = findViewById(R.id.threeHP)
-            var fourHP: TextView = findViewById(R.id.fourHP)
-            arrayOf(oneHP, twoHP, threeHP, fourHP)
+            var one: TextView = findViewById(R.id.oneHP)
+            var two: TextView = findViewById(R.id.twoHP)
+            var three: TextView = findViewById(R.id.threeHP)
+            var four: TextView = findViewById(R.id.fourHP)
+            arrayOf(one, two, three, four)
         }
 
         layouts = {
-            val layoutOne: LinearLayout = findViewById(R.id.layoutOne)
-            val layoutTwo: LinearLayout = findViewById(R.id.layoutTwo)
-            val layoutThree: LinearLayout = findViewById(R.id.layoutThree)
-            val layoutFour: LinearLayout = findViewById(R.id.layoutFour)
-            arrayOf(layoutOne, layoutTwo, layoutThree, layoutFour)
+            val one: LinearLayout = findViewById(R.id.layoutOne)
+            val two: LinearLayout = findViewById(R.id.layoutTwo)
+            val three: LinearLayout = findViewById(R.id.layoutThree)
+            val four: LinearLayout = findViewById(R.id.layoutFour)
+            arrayOf(one, two, three, four)
         }
 
         loser = findViewById(R.id.loser)
