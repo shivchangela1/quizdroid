@@ -18,13 +18,19 @@ class topics : AppCompatActivity() {
         val button = findViewById<Button>(R.id.beginButton)
 
         val subject = intent.getStringExtra("subject")
-        val numOfQuestions = 4 //get from intent later
-        val details = "Description placeholder that will be initialized later!"
+        val numOfQuestions = 4
         val numQuestionsText = "This topic contains $numOfQuestions questions"
 
         subjectName.text = subject
-        description.text = details
+
+        description.text = when (subject) {
+            "Math" -> "includes the study of such topics as quantity, structure, space, and change"
+            "Physics" -> "the branch of science concerned with the nature and properties of matter and energy"
+            else -> "a fictional universe where the stories in most American comic book titles and other media published by Marvel Comics take place"
+        }
+
         numQuestions.text = numQuestionsText
+
         button.setOnClickListener {
             val intent = Intent(this, questions::class.java)
             intent.putExtra("subject", subject)
