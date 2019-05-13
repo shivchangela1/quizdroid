@@ -10,18 +10,16 @@ class App : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app)
 
-        val trans = supportFragmentManager.beginTransaction()
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
         val fragment = Topics()
         val bundle = Bundle()
-        val subject = intent.getStringExtra("subject")
 
-        bundle.putString("subject", subject)
-
+        val subject = intent.getIntExtra("subject", 1)
+        bundle.putInt("subject", subject)
         fragment.arguments = bundle
-
-        trans.replace(R.id.fragmentLayout, fragment)
-        trans.addToBackStack(null)
-        trans.commit()
-
+        transaction.replace(R.id.fragmentLayout, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

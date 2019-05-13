@@ -20,22 +20,28 @@ class Answers : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val myAnsBox = getView()!!.findViewById<TextView>(R.id.myAns)
-        val actualAnsBox = getView()!!.findViewById<TextView>(R.id.actualAns)
-        val score = getView()!!.findViewById<TextView>(R.id.score)
+        val myAns = getView()!!.findViewById<TextView>(R.id.myAns)
+        val actualAns = getView()!!.findViewById<TextView>(R.id.actualAns)
+        val scoreBox = getView()!!.findViewById<TextView>(R.id.score)
         val btn = getView()!!.findViewById<Button>(R.id.nextOrFinalBtn)
 
+        var score = arguments!!.getInt("score")
+        val subject = arguments!!.getInt("subject")
         val totalQuestions = arguments!!.getInt("totalQuestions")
         val questionNum = arguments!!.getInt("questionNum")
         val myAnswer = arguments!!.getInt("myAnswer")
 
-        myAnsBox.text = myAnswer.toString()
-        actualAnsBox.text = 1.toString() //set to an actual answer later
+        myAns.text = myAnswer.toString()
+        actualAns.text = QuizApp.otherRepository.getTopic(subject).questions[questionNum].answer.toString()
 
-        val scoreText = "You have $questionNum out of $totalQuestions correct!" //turn questionNum into the correct # of answers lately
-        score.text = scoreText
+        if (myAnswer == QuizApp.otherRepository.getTopic(subject).questions[questionNum].answer) {
+            score += 1
+        }
 
-        if (totalQuestions == questionNum) {
+        val scoreText = "You have ${score} out of $totalQuestions correct!"
+        scoreBox.text = scoreText
+
+        if (totalQuestions == questionNum + 1) {
             btn.text = "Finish"
         }
 
@@ -45,15 +51,13 @@ class Answers : Fragment() {
                 startActivity(intent)
             } else {
                 val fragment = Questions()
-
                 val bundle = Bundle()
+                bundle.putInt("score", score)
                 bundle.putInt("totalQuestions", totalQuestions)
                 bundle.putInt("questionNum", questionNum + 1)
-
                 fragment.arguments = bundle
 
                 val transaction = fragmentManager!!.beginTransaction()
-//                transaction.setCustomAnimations(R.animation.enter_from_right, R.animation.exit_to_left)
                 transaction.replace(R.id.fragmentLayout, fragment)
                 transaction.addToBackStack(null)
                 transaction.commit()
